@@ -19,9 +19,12 @@ LONG_BREAK_MIN = 20
 
 window = Tk()
 window.title("Pomodore Timer")
-window.minsize(width=350, height=350)
+# window.minsize(width=350, height=350)
 
-
+canvas = Canvas(width=200, height=224)
+tom_img = PhotoImage(file="tomato.png")
+canvas.create_image(100, 112, image=tom_img)
+canvas.pack()
 
 
 
