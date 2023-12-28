@@ -18,10 +18,19 @@ session = 0
 
 def start_timer():
     global session
+    global x_axis
+    label1 = Label()
     session+=1
     if session % 8 == 0:
+        label1.config(text="✓", font=(FONT_NAME, 12, "bold"), bg=YELLOW, foreground=GREEN)
+        label1.place(x=x_axis, y=300)
+        x_axis += 20
         count_down(LONG_BREAK_MIN)
     elif session % 2 == 0:
+        label1.config(text="✓", font=(FONT_NAME, 12, "bold"), bg=YELLOW, foreground=GREEN)
+        label1.place(x=x_axis, y=300)
+        x_axis+=20
+        print(x_axis)
         count_down(SHORT_BREAK_MIN)
     else:
         count_down(WORK_MIN)
@@ -53,10 +62,7 @@ def count_down(count):
         start_timer()
 
 
-        # label1 = Label()
-        # label1.config(text="✓", font=(FONT_NAME, 12, "bold"), bg=YELLOW, foreground=GREEN)
-        # label1.place(x=x_axis, y=300)
-        # x_axis+=20
+
 
 # ---------------------------- UI SETUP ------------------------------- #
 
