@@ -9,3 +9,5 @@
 # 4. Creating a label called "timer", two buttons and checkmark for pomodore completion.
 
 # 5. Conversion of the seconds to minute, and display of it.
+
+# 6. Implementing the short break and long break timer with the help of functions.
