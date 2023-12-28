@@ -13,3 +13,5 @@
 # 6. Implementing the short break and long break timer with the help of functions.
 
 # 7. Adding a checkmark as each work session is completed.
+
+# 8. Resetting timer
