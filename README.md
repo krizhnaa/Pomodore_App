@@ -1,5 +1,11 @@
 //Creating a Pomodore Timer App using Python.
 
+![pom](https://github.com/krizhnaa/Pomodore_App/assets/86138069/ab770f27-62d4-4ba6-9336-dc10d95d0633)
+
+![pom2](https://github.com/krizhnaa/Pomodore_App/assets/86138069/926899b7-de47-45da-ac17-ab3c1f49114e)
+
+
+
 # 1. Creating a window using tkinter class
 
 # 2. By using Canvas widget fitting the tomato image into Tkinter window
