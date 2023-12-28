@@ -9,13 +9,24 @@ WORK_MIN = 5
 SHORT_BREAK_MIN = 2
 LONG_BREAK_MIN = 20
 x_axis = 80
+session = 0
 
 # ---------------------------- TIMER RESET ------------------------------- # 
 
 # ---------------------------- TIMER MECHANISM ------------------------------- #
 
+
 def start_timer():
-    count_down(WORK_MIN)
+    global session
+    session+=1
+    if session % 8 == 0:
+        count_down(LONG_BREAK_MIN)
+    elif session % 2 == 0:
+        count_down(SHORT_BREAK_MIN)
+    else:
+        count_down(WORK_MIN)
+    print(session)
+    # count_down(LONG_BREAK_MIN)
 
 
 def short_break():
@@ -28,8 +39,6 @@ def long_break():
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
 def count_down(count):
-    x_axis = 80
-    session_count = 0
     min = int(count/60)
     int_sec = count/60
     sec = int((int_sec - min) * 60)
@@ -40,17 +49,14 @@ def count_down(count):
     canvas.itemconfig(timer_text, text=f"{min}:{sec}")
     if count > 0:
         window.after(1000, count_down, count-1)
-    elif count == 0:
-        session_count+=1
+    else:
+        start_timer()
+
+
         # label1 = Label()
         # label1.config(text="✓", font=(FONT_NAME, 12, "bold"), bg=YELLOW, foreground=GREEN)
         # label1.place(x=x_axis, y=300)
-        short_break()
-        count = WORK_MIN
         # x_axis+=20
-    elif session_count == 4:
-        long_break()
-
 
 # ---------------------------- UI SETUP ------------------------------- #
 
